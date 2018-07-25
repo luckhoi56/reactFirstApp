@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import SearchBar from './components/search_bar';
 //variable to hold the API key
 const API_KEY  = 'AIzaSyDCdWEUdEmkClwVHt3NZsvBjKXWGtJdRWk';
 //const because key never change
@@ -9,7 +10,11 @@ const API_KEY  = 'AIzaSyDCdWEUdEmkClwVHt3NZsvBjKXWGtJdRWk';
 //some html
 
 const App =  () =>{
-    return <div>Hi!</div>; //this an JXS turns into hmtl
+    return( 
+        <div>
+            <SearchBar />
+        </div> //this an JXS turns into hmtl
+    );
 }
 
 
