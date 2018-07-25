@@ -1,9 +1,18 @@
 //import React from 'react' ;
 import React, { Component} from 'react' ;
 //give the searchBar many functionality from the React.Component
+
 class SearchBar extends Component{
+    constructor (props){
+        super(props);
+        this.state = {term: ''}; //only inside the constructor we can change state like this
+    }
     render() {
-        return <input onChange={event => console.log(event.target.value)}/>;
+        return (
+        <div>
+            <input onChange={event => this.setState({term:event.target.value})}/>
+        </div>
+        )
     }
 
     //on or handle, event and then name of the event itself
