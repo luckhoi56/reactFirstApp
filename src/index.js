@@ -1,20 +1,33 @@
-import React from 'react';
+import React, { Component} from 'react';
 import ReactDOM from 'react-dom';
-
+import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar';
+import VideoList from './components/video_list';
 //variable to hold the API key
 const API_KEY  = 'AIzaSyDCdWEUdEmkClwVHt3NZsvBjKXWGtJdRWk';
-//const because key never change
 
-//Create a new component. This component should produce 
-//some html
 
-const App =  () =>{
+
+class App extends Component {
+    constructor (props){
+        super (props);
+        this.state = { videos: [] };
+    
+
+    YTSearch ({key:API_KEY, term: 'surfboards'}, (videos) =>{
+        this.setState ({videos});
+        //this.setState({vi deos});
+    });
+
+}
+    render(){
     return( 
         <div>
             <SearchBar />
+            <VideoList videos= {this.state.videos} />
         </div> //this an JXS turns into hmtl
     );
+}
 }
 
 
